@@ -12,3 +12,4 @@ Python当中的使用的一些模块、类和方法
 4. TK-Plots 一个使用 TK 做的公式图打印的程序
 5. notebook 在 JupyterNotebook 中可以直接使用的一些操作
 6. plt 对于 Matplotlib 的 plt 的一些常用封装
+7. img 关于 Image 的一些操作，主要是 PIL 中的
