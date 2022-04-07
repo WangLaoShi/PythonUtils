@@ -10,3 +10,5 @@ Python当中的使用的一些模块、类和方法
 2. NP 关于 numpy 的一些操作
 3. VideoAudio 关于音频视频的一些操作
 4. TK-Plots 一个使用 TK 做的公式图打印的程序
+5. notebook 在 JupyterNotebook 中可以直接使用的一些操作
+6. plt 对于 Matplotlib 的 plt 的一些常用封装
