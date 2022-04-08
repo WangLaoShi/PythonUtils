@@ -136,7 +136,7 @@ class LabelTool():
             self.egLabels[-1].pack(side = TOP)
 
         # display mouse position
-        self.disp = Label(self.ctrPanel, text='')
+        self.disp = Label(self.ctrPanel, text='',width=10)
         self.disp.pack(side = RIGHT)
 
         self.frame.columnconfigure(1, weight = 1)
