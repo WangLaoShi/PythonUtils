@@ -22,11 +22,13 @@ class Perceptron:
         :param learn_nums: 学习多少次
         :param rate: 学习率
         """
+        counter = 0
         for i in range(learn_nums):
             for index, input_vector in enumerate(input_vectors):
                 label = labels[index]
                 delta = label * (sum(self.w * input_vector) + self.b)
-                print("中间结果：此时感知器权重为{0}，偏置项为{1}\n".format(self.w, self.b))
+                counter += 1
+                print("{0} 次中间结果：此时感知器权重为{1}，偏置项为{2}\n".format(counter,self.w, self.b))
                 if delta <= 0:
                     # 计算方法由梯度下降算法推导出来
                     self.w += label * input_vector * rate
