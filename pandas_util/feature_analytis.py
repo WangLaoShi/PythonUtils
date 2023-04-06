@@ -75,7 +75,7 @@ H1:样本不符合
     gcut = pd.cut(columnOfDataFrame, 10, right=False)
     gcut_count = gcut.value_counts(sort=False)
     # 在这里不排序
-    columnOfDataFrame['分组区间'] = gcut.values
+    # columnOfDataFrame['分组区间'] = gcut.values
     # 给原表多加一列，写每列数据在的区间
     print(gcut.head(), '\n------')
     print(gcut_count)
@@ -109,4 +109,16 @@ H1:样本不符合
             autopct='%.2f%%',
             shadow=True)
     plt.axis('equal')
+    plt.show()
+
+    print("---箱线图---")
+    print("""
+简单直观的异常值检测方法:箱形图（箱线图）
+箱形图中，从上到下依次有 6 个数据节点，
+分别是上界、上四分位、均值、中位数、下四分位、下界。
+而那些超过上界的值就会被标记为离群点，也就是异常数据。
+    """)
+    not_null = pd.to_numeric(columnOfDataFrame, errors='coerce')
+    print(not_null)
+    plt.boxplot(not_null)
     plt.show()
