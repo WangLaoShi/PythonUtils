@@ -53,4 +53,8 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None, n_jobs=1,
 
     midpoint = ((train_scores_mean[-1] + train_scores_std[-1]) + (test_scores_mean[-1] - test_scores_std[-1])) / 2
     diff = (train_scores_mean[-1] + train_scores_std[-1]) - (test_scores_mean[-1] - test_scores_std[-1])
+
+    if diff < 0.05:
+        print("目前 两条曲线的 Diff = ",diff," 看起来还不错！")
+
     return midpoint, diff
