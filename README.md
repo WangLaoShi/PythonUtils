@@ -13,3 +13,11 @@ Python当中的使用的一些模块、类和方法
 5. notebook 在 JupyterNotebook 中可以直接使用的一些操作
 6. plt 对于 Matplotlib 的 plt 的一些常用封装
 7. img 关于 Image 的一些操作，主要是 PIL 中的
+
+## JupyterNotebook 中使用主题
+
+```shell
+pip install jupyterthemes --user
+jt -l
+jt -t grade3 -fs 95 -altp -tfs 11 -nfs 115 -cellw 95% -T
+```

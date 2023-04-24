@@ -269,7 +269,7 @@ class RegressorCollection:
         # must be a str among {'friedman_mse', 'poisson', 'absolute_error', 'squared_error'}. Got 'mse' instead.
         reg = RandomForestRegressor(n_estimators=10, criterion="friedman_mse", max_depth=None,
                                     min_samples_split=2, min_samples_leaf=1,
-                                    min_weight_fraction_leaf=0.0, max_features="auto",
+                                    min_weight_fraction_leaf=0.0,
                                     max_leaf_nodes=None, min_impurity_decrease=0.0,
                                     bootstrap=True, oob_score=False,
                                     random_state=None, verbose=0, warm_start=False)
@@ -295,7 +295,7 @@ class RegressorCollection:
         #  {'poisson', 'squared_error', 'absolute_error', 'friedman_mse'}. Got 'mse' instead.
         reg = ExtraTreesRegressor(n_estimators=10, criterion="friedman_mse", max_depth=None,
                                   min_samples_split=2, min_samples_leaf=1,
-                                  min_weight_fraction_leaf=0.0, max_features="auto",
+                                  min_weight_fraction_leaf=0.0,
                                   max_leaf_nodes=None, min_impurity_decrease=0.0,
                                   bootstrap=False, oob_score=False,
                                   random_state=None, verbose=0, warm_start=False)
@@ -320,7 +320,7 @@ class RegressorCollection:
         random_state：随机数种子。
         n_estimators和learning_rate两个参数相互牵制，通常会一起进行调参。
         """
-        reg = AdaBoostRegressor(base_estimator=DecisionTreeRegressor(max_depth=3), n_estimators=50,
+        reg = AdaBoostRegressor(estimator=DecisionTreeRegressor(max_depth=3), n_estimators=50,
                                 learning_rate=1.0, loss="linear")
         reg.fit(X_train, y_train)
         if y_test is None:
